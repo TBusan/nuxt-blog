@@ -11,5 +11,12 @@ export default defineNuxtConfig({
     '@nuxt/scripts',
     '@nuxt/ui',
     '@nuxt/eslint'
-  ]
+  ],
+  
+  fonts: {
+    providers: {
+      google: false,
+      googleicons: false
+    }
+  }
 })
