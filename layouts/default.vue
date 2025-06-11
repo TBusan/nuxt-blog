@@ -1,15 +1,45 @@
 <template>
   <div class="min-h-screen flex flex-col">
     <header class="bg-white shadow-sm">
-      <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
-        <NuxtLink to="/" class="text-xl font-bold">Company Name</NuxtLink>
-        <div class="flex space-x-6">
-          <NuxtLink to="/" class="hover:text-blue-600">Home</NuxtLink>
-          <NuxtLink to="/about" class="hover:text-blue-600">About</NuxtLink>
-          <NuxtLink to="/services" class="hover:text-blue-600">Services</NuxtLink>
-          <NuxtLink to="/products" class="hover:text-blue-600">Products</NuxtLink>
-          <NuxtLink to="/blog" class="hover:text-blue-600">Blog</NuxtLink>
-          <NuxtLink to="/contact" class="hover:text-blue-600">Contact</NuxtLink>
+      <nav class="container mx-auto px-4 py-4">
+        <div class="flex justify-between items-center">
+          <NuxtLink to="/" class="text-xl font-bold">Company Name</NuxtLink>
+          
+          <!-- 移动端菜单按钮 -->
+          <button 
+            @click="mobileMenuOpen = !mobileMenuOpen" 
+            class="md:hidden flex items-center px-3 py-2 border rounded text-blue-600 border-blue-600"
+          >
+            <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+              <path v-if="!mobileMenuOpen" d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/>
+              <path v-else d="M10 8.586L2.929 1.515 1.515 2.929 8.586 10l-7.071 7.071 1.414 1.414L10 11.414l7.071 7.071 1.414-1.414L11.414 10l7.071-7.071-1.414-1.414L10 8.586z"/>
+            </svg>
+          </button>
+          
+          <!-- 桌面端菜单 -->
+          <div class="hidden md:flex space-x-6">
+            <NuxtLink to="/" class="hover:text-blue-600">Home</NuxtLink>
+            <NuxtLink to="/about" class="hover:text-blue-600">About</NuxtLink>
+            <NuxtLink to="/services" class="hover:text-blue-600">Services</NuxtLink>
+            <NuxtLink to="/products" class="hover:text-blue-600">Products</NuxtLink>
+            <NuxtLink to="/blog" class="hover:text-blue-600">Blog</NuxtLink>
+            <NuxtLink to="/contact" class="hover:text-blue-600">Contact</NuxtLink>
+          </div>
+        </div>
+        
+        <!-- 移动端菜单 -->
+        <div 
+          v-if="mobileMenuOpen" 
+          class="md:hidden mt-4 pb-4"
+        >
+          <div class="flex flex-col space-y-3">
+            <NuxtLink to="/" class="hover:text-blue-600 py-2 px-1 border-b border-gray-200" @click="mobileMenuOpen = false">Home</NuxtLink>
+            <NuxtLink to="/about" class="hover:text-blue-600 py-2 px-1 border-b border-gray-200" @click="mobileMenuOpen = false">About</NuxtLink>
+            <NuxtLink to="/services" class="hover:text-blue-600 py-2 px-1 border-b border-gray-200" @click="mobileMenuOpen = false">Services</NuxtLink>
+            <NuxtLink to="/products" class="hover:text-blue-600 py-2 px-1 border-b border-gray-200" @click="mobileMenuOpen = false">Products</NuxtLink>
+            <NuxtLink to="/blog" class="hover:text-blue-600 py-2 px-1 border-b border-gray-200" @click="mobileMenuOpen = false">Blog</NuxtLink>
+            <NuxtLink to="/contact" class="hover:text-blue-600 py-2 px-1" @click="mobileMenuOpen = false">Contact</NuxtLink>
+          </div>
         </div>
       </nav>
     </header>
@@ -51,4 +81,8 @@
       </div>
     </footer>
   </div>
-</template> 
+</template>
+
+<script setup>
+const mobileMenuOpen = ref(false);
+</script> 
