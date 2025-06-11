@@ -8508,7 +8508,7 @@ tailwind-variants@^1.0.0:
   dependencies:
     tailwind-merge "3.0.2"
 
-tailwindcss@4.1.8, tailwindcss@^4.1.7:
+tailwindcss@4.1.8, tailwindcss@^4.1.7, tailwindcss@^4.1.8:
   version "4.1.8"
   resolved "https://registry.npmmirror.com/tailwindcss/-/tailwindcss-4.1.8.tgz#5d66d095ee7d82f03d6dbc6158bc248e064a5c05"
   integrity sha512-kjeW8gjdxasbmFKpVGrGd5T4i40mV5J2Rasw48QARfYeQ8YS9x02ON9SFWax3Qf616rt4Cp3nVNIj6Hd1mP3og==

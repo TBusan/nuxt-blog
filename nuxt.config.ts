@@ -18,5 +18,7 @@ export default defineNuxtConfig({
       google: false,
       googleicons: false
     }
-  }
+  },
+  
+  css: ['~/assets/css/main.css']
 })
